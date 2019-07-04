@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    Enter a number: <input id="number" value=""/>
+    <button type="button" onclick="main()" > Show </button>
+    <p id="show"></p>
+    <script>
+        function kiemTraSoNguyenTo(x) {
+            if (x<2) return false;
+            if (x<4) return true;
+            for (let j=2; j<=Math.round(Math.sqrt(x));j++){
+                let kiemTraUoc = x % j === 0;
+                if (kiemTraUoc) {
+                    return false;
+                }
+            }
+            return true;
+        }
+         function main() {
+
+             let number = parseInt(document.getElementById("number").value);
+             if (number < 2) {
+                 document.write("Không có số nguyên tố nào từ 1 đến "+number);
+             } else {
+                 let s='';
+                 for (let i=2; i<=number; i++){
+                     if (kiemTraSoNguyenTo(i)) {
+                         s+= i+" ";
+                     }
+                 }
+                 document.getElementById("show").innerText=s;
+             }
+         }
+    </script>
+</body>
+</html>

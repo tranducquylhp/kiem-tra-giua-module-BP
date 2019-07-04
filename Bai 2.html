@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function sumElementOdd(arr) {
+            let sum=0;
+            for (let j=0; j<arr.length; j++){
+                let isOdd = arr[j] % 2 !== 0;
+                if (isOdd) {
+                    sum += arr[j];
+                }
+            }
+            return sum;
+        }
+        let arr = [1,2,8,-5,7,3];
+        document.write(sumElementOdd(arr));
+    </script>
+</body>
+</html>
