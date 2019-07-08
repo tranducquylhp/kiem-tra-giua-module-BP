@@ -7,13 +7,16 @@
 <body>
     <script>
         function calculateYearOld(yearOfBirth) {
-            let year= new Date();
-            let kiemTraTuoi = yearOfBirth <= year.getFullYear();
+            let currentYear= new Date().getFullYear();
+            let kiemTraTuoi = yearOfBirth <= currentYear;
             if (kiemTraTuoi) {
-                return year.getFullYear() - yearOfBirth;
-            } else return "Không hợp lệ";
+                return currentYear - yearOfBirth;
+            } else return -1;
         }
-        alert(calculateYearOld(1998));
+        let result = calculateYearOld(1998);
+        if (result === -1) {
+            alert("Khong hop le");
+        } else alert(result);
     </script>
 </body>
 </html>
